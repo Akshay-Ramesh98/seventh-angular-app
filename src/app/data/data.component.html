@@ -1,0 +1,50 @@
+
+<form>
+Name    :
+<input type="text" name="name" [(ngModel)]="name"> <br>
+
+Address    :
+<input type="text" name="address" [(ngModel)]="address"> <br>
+password   :
+<input type="text" name="password" [(ngModel)]="password"> <br>
+
+<button type="button" value="Submit" (click)="addData()" class="button">Add</button>
+<button type="button"  class="btn bt-primary" (click) = "iooreset()" >Reset</button>
+</form>
+
+<hr>
+
+<table id="tableStyle">
+    <tr>
+      <th>
+        name
+      </th>
+      
+      <th>
+       Address
+      </th>
+      <th>
+        password
+      </th>
+    </tr>
+    <tr *ngFor="let entry of tableData ">
+        <td>
+          {{entry.name}}
+        </td>
+       
+        <td>
+            {{entry.address}}
+          </td>
+          <td>
+            {{entry.password}}
+          </td>
+          <td><button type="button" class="btn btn-primary" (click)="removeItems(entry)">Remove</button></td>
+        
+      </tr>
+    </table>
+    <button type="button"  class = "btn btn-primary" (click)= "sotrdataempId()" >Sort</button>
+
+    
+        
+    
+    <br>
